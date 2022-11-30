@@ -1,0 +1,28 @@
+#welcomeImg {
+  height: 250px;
+  margin-top: 5rem;
+  margin-bottom: 5px;
+}
+
+#welcome-div {
+  display: flex;
+  justify-content: center;
+}
+
+#login-div {
+  display: flex;
+  justify-content: center;
+}
+
+#login-button {
+  margin: 0;
+  padding: 5px;
+  background-color: #38056a;
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+#login-button:hover {
+  opacity: .4;
+}

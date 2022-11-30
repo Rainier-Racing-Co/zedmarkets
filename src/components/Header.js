@@ -1,9 +1,9 @@
 import React from 'react';
-import { Nav, Image } from 'react-bootstrap';
+import { Image } from 'react-bootstrap';
 import hawkuImg from '../assets/img/Hawku.png';
-// import banner from '../assets/img/Rainier Racing Splash Page.png';
 import rrc from '../assets/img/RR Logo.png';
 import '../css/Header.css';
+import NavBar from './NavBar.js';
 
 
 class Header extends React.Component {
@@ -23,26 +23,10 @@ class Header extends React.Component {
             </div>
           </div>
         </header>
-        <Nav activeKey="/home" as="ul">
-          <Nav.Item>
-            <Nav.Link href="/home">Home</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/markets">Live Markets</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="https://rainierracingco.com">Rainier Racing Co.</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="https://www.hawku.com/c/zed_run/zed_horse?selected_mode=list&selected_tab=listings">Hawku</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="https://zed.run">ZED Run</Nav.Link>
-          </Nav.Item>
-        </Nav>
+        <NavBar/>
       </>
     );
-  };
-};
+  }
+}
 
 export default Header;

@@ -8,7 +8,7 @@ class Footer extends React.Component {
         <footer>{`© 2022 Rainier Racing Co., LLC ${String.fromCharCode(183)} All rights reserved.`}</footer>
       </>
     );
-  };
-};
+  }
+}
 
 export default Footer;

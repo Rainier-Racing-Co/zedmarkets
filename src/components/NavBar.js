@@ -1,17 +1,21 @@
 import React from 'react';
 import { Nav } from 'react-bootstrap';
 import '../css/NavBar.css';
+import { NavLink, Route, Routes} from 'react-router-dom';
+import LiveMarkets from './LiveMarkets.js';
+// import LandingPage from './LandingPage';
+// import App from './App';
 
 class NavBar extends React.Component {
   render() {
     return(
       <>
-        <Nav activeKey="/home" as="ul">
+        <Nav activeKey="/" as="ul">
           <Nav.Item>
-            <Nav.Link href="/home">Home</Nav.Link>
+            <NavLink to="/">Home</NavLink>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href="/markets">Live Markets</Nav.Link>
+            <NavLink to="/markets">Live Markets</NavLink>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link href="https://rainierracingco.com">Rainier Racing Co.</Nav.Link>
@@ -23,6 +27,10 @@ class NavBar extends React.Component {
             <Nav.Link href="https://zed.run">ZED Run</Nav.Link>
           </Nav.Item>
         </Nav>
+        <Routes>
+          <Route exact path="/markets" element={<LiveMarkets/>}/>
+          <Route exact path="*" />
+        </Routes>
       </>
     );
   }

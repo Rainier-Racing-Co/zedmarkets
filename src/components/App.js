@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header.js';
 import Footer from './Footer.js';
 import '../css/App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import LandingPage from './LandingPage.js';
 import LiveMarkets from './LiveMarkets.js';
 import {Route, Routes} from 'react-router-dom';

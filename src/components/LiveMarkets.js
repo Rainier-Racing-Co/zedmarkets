@@ -1,10 +1,18 @@
 import React from 'react';
+import '../css/LiveMarkets.css';
+import Horse from './Horse.js';
 
 class LiveMarkets extends React.Component {
   render() {
     return(
       <>
-        <h1>Live Markets Page</h1>
+        <div className="markets-headline">
+          <h1 id="markets-title">Live Markets Page</h1>
+        </div>
+        <div className='chart'>
+          <img src="https://via.placeholder.com/600x400?text=Chart+of+Market+Data" className="price-chart"/>
+        </div>
+        <Horse/>
       </>
     );
   }

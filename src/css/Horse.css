@@ -1,0 +1,23 @@
+/* TODO */
+.display-area {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-img-top {
+  width: 60%;
+  margin: auto;
+  display: block;
+}
+
+.card {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+  border: 1px solid black;
+}
+
+.card-text {
+  margin: 1rem;
+}

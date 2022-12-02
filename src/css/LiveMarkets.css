@@ -1,0 +1,19 @@
+.markets-headline {
+  display: flex;
+  justify-content: center;
+}
+
+#markets-title {
+  color: red;
+};
+
+.chart {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.price-chart {
+  margin: auto;
+  display: block;
+}

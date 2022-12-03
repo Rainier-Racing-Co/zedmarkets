@@ -13,12 +13,14 @@ class App extends React.Component {
     return (
       <>
         <Header/>
-        <Routes>
-          <Route exact path="/" element={<LandingPage/>}/>
-          <Route exact path="/markets" element={<LiveMarkets/>}/>
-          <Route exact path="*" />
-        </Routes>
-        {/* {this.props.auth0.isAuthenticated ? <h1>Welcome Back!</h1> : <LandingPage/> } */}
+        <div className='all-content-container'>
+          <Routes>
+            <Route exact path="/" element={<LandingPage/>}/>
+            <Route exact path="/markets" element={<LiveMarkets/>}/>
+            <Route exact path="*" />
+          </Routes>
+          {/* {this.props.auth0.isAuthenticated ? <h1>Welcome Back!</h1> : <LandingPage/> } */}
+        </div>
         <Footer/>
       </>
     );

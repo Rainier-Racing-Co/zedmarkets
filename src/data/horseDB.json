@@ -57,5 +57,45 @@
       "third_place_finishes": 71,
       "win_rate": 19.54
     }
+  },
+  {
+    "bloodline": "Nakamoto",
+    "breed_type": "genesis",
+    "breeding_counter": 1,
+    "color": "Fandango",
+    "gen": "Z1",
+    "horse_type": "Filly",
+    "img_url": "https://img.zed.run/horses/B53389.png",
+    "inserted_at": "2019-01-17T02:44:38",
+    "last_breeding_reset": "2022-11-17T02:44:14Z",
+    "name": "Millions",
+    "nft_id": 3,
+    "race_statistic": {
+      "first_place_finishes": 5,
+      "number_of_races": 23,
+      "second_place_finishes": 3,
+      "third_place_finishes": 6,
+      "win_rate": 21.74
+    }
+  },
+  {
+    "bloodline": "Nakamoto",
+    "breed_type": "genesis",
+    "breeding_counter": 3,
+    "color": "White Smoke",
+    "gen": "Z1",
+    "horse_type": "Colt",
+    "img_url": "https://img.zed.run/horses/F5F5F5.png",
+    "inserted_at": "2019-01-18T06:44:49",
+    "last_breeding_reset": "2022-11-18T06:44:32Z",
+    "name": "Guns and Horses",
+    "nft_id": 4,
+    "race_statistic": {
+      "first_place_finishes": 0,
+      "number_of_races": 0,
+      "second_place_finishes": 0,
+      "third_place_finishes": 0,
+      "win_rate": 0.0
+    }
   }
 ]

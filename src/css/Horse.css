@@ -1,7 +1,9 @@
 /* TODO */
 .display-area {
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card-img-top {

@@ -1,0 +1,61 @@
+[{
+    "bloodline": "Nakamoto",
+    "breed_type": "genesis",
+    "breeding_counter": 3,
+    "color": "Hairy Canary",
+    "gen": "Z1",
+    "horse_type": "Colt",
+    "img_url": "https://img.zed.run/horses/FFFF99.png",
+    "inserted_at": "2019-01-16T16:54:33",
+    "last_breeding_reset": "2022-11-08T14:26:24Z",
+    "name": "Thin Frivolity",
+    "nft_id": 0,
+    "race_statistic": {
+      "first_place_finishes": 0,
+      "number_of_races": 0,
+      "second_place_finishes": 0,
+      "third_place_finishes": 0,
+      "win_rate": 0.0
+    }
+  },
+  {
+    "bloodline": "Nakamoto",
+    "breed_type": "genesis",
+    "breeding_counter": 1,
+    "color": "Cornsilk",
+    "gen": "Z1",
+    "horse_type": "Mare",
+    "img_url": "https://img.zed.run/horses/FFF8DC.png",
+    "inserted_at": "2019-01-17T00:22:32",
+    "last_breeding_reset": "2022-11-17T00:22:11Z",
+    "name": "Chase Jackson",
+    "nft_id": 1,
+    "race_statistic": {
+      "first_place_finishes": 0,
+      "number_of_races": 0,
+      "second_place_finishes": 0,
+      "third_place_finishes": 0,
+      "win_rate": 0.0
+    }
+  },
+  {
+    "bloodline": "Nakamoto",
+    "breed_type": "genesis",
+    "breeding_counter": 1,
+    "color": "Bittersweet Shimmer",
+    "gen": "Z1",
+    "horse_type": "Stallion",
+    "img_url": "https://img.zed.run/horses/BF4F51.png",
+    "inserted_at": "2019-01-17T00:37:51",
+    "last_breeding_reset": "2022-11-17T00:37:19Z",
+    "name": "Wall Street",
+    "nft_id": 2,
+    "race_statistic": {
+      "first_place_finishes": 110,
+      "number_of_races": 563,
+      "second_place_finishes": 81,
+      "third_place_finishes": 71,
+      "win_rate": 19.54
+    }
+  }
+]

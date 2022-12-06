@@ -69,6 +69,7 @@ class App extends React.Component {
       const queryResult = await axios.post(
         GRAPHQL_API, {
           query: GET_HORSE_DATA_QUERY,
+          headers: {"Content-Type":"application/json"},
           variables: {
             "input": {
               "horse_id": 4

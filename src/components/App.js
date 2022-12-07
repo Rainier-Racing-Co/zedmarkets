@@ -7,6 +7,7 @@ import LandingPage from './LandingPage.js';
 import LiveMarkets from './LiveMarkets.js';
 import {Route, Routes} from 'react-router-dom';
 import axios from 'axios';
+import HorseLookup from './HorseLookup.js';
 
 const GRAPHQL_API = 'https://zed-ql.zed.run/graphql';
 const GET_HORSE_DATA_QUERY = `
@@ -60,11 +61,24 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      horses: []
+      horses: [],
+      queriedHorse: null
     };
   }
+  
+  handleHorseQueryInput = async (e) => {
+    await this.setState({
+      queriedHorse: parseInt(e.target.value)
+    });
+    console.log(this.state.queriedHorse);
+  };
 
-  getHorse = async () => {
+  handleHorseQuerySubmit = (e) => {
+    e.preventDefault();
+    this.getHorse(this.state.queriedHorse);
+  };
+
+  getHorse = async (horseId) => {
     try{
       const queryResult = await axios.post(
         GRAPHQL_API, {
@@ -72,7 +86,7 @@ class App extends React.Component {
           headers: {"Content-Type":"application/json"},
           variables: {
             "input": {
-              "horse_id": 4
+              "horse_id": horseId
             }
           }
         });
@@ -81,7 +95,7 @@ class App extends React.Component {
       this.setState({horses: horseResult});
       console.log('state: ', this.state.horses);
     } catch(err) {
-      console.log(err.message);
+      console.log('Error: ', err.message);
     }
   };
 
@@ -92,7 +106,8 @@ class App extends React.Component {
         <div className='all-content-container'>
           <Routes>
             <Route exact path="/" element={<LandingPage/>}/>
-            <Route exact path="/markets" element={<LiveMarkets getHorse={this.getHorse} horses={this.state.horses}/>}/>
+            <Route exact path="/markets" element={<LiveMarkets/>}/>
+            <Route exact path="/horse" element={<HorseLookup handleHorseQuerySubmit={this.handleHorseQuerySubmit} horses={this.state.horses} queriedHorse={this.state.queriedHorse} handleHorseQueryInput={this.handleHorseQueryInput}/>}/>
             <Route exact path="*" />
           </Routes>
           {/* {this.props.auth0.isAuthenticated ? <h1>Welcome Back!</h1> : <LandingPage/> } */}

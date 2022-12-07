@@ -8,6 +8,10 @@
     "url":"/markets"
   },
   {
+    "display_name": "Horse Lookup",
+    "url":"/horse"
+  },
+  {
     "display_name":"Rainier Racing Co.",
     "url":"https://rainierracingco.com"
   },

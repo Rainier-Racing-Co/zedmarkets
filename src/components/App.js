@@ -62,6 +62,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       horses: [],
+      queriedHorseData: [],
       queriedHorse: null
     };
   }
@@ -70,12 +71,13 @@ class App extends React.Component {
     await this.setState({
       queriedHorse: parseInt(e.target.value)
     });
-    console.log(this.state.queriedHorse);
+    console.log('queriedHorse State: ', this.state.queriedHorse);
   };
 
-  handleHorseQuerySubmit = (e) => {
+  handleHorseQuerySubmit = async (e) => {
     e.preventDefault();
-    this.getHorse(this.state.queriedHorse);
+    await this.getHorse(this.state.queriedHorse);
+    console.log(this.state.horses);
   };
 
   getHorse = async (horseId) => {
@@ -92,8 +94,8 @@ class App extends React.Component {
         });
       const horseResult = queryResult.data.data.horse;
       console.log('horseResult', horseResult);
-      this.setState({horses: horseResult});
-      console.log('state: ', this.state.horses);
+      this.setState({queriedHorseData: horseResult});
+      console.log('horses state: ', this.state.queriedHorseData);
     } catch(err) {
       console.log('Error: ', err.message);
     }
@@ -107,7 +109,7 @@ class App extends React.Component {
           <Routes>
             <Route exact path="/" element={<LandingPage/>}/>
             <Route exact path="/markets" element={<LiveMarkets/>}/>
-            <Route exact path="/horse" element={<HorseLookup handleHorseQuerySubmit={this.handleHorseQuerySubmit} horses={this.state.horses} queriedHorse={this.state.queriedHorse} handleHorseQueryInput={this.handleHorseQueryInput}/>}/>
+            <Route exact path="/horse" element={<HorseLookup handleHorseQuerySubmit={this.handleHorseQuerySubmit} horse={this.state.queriedHorseData} queriedHorse={this.state.queriedHorse} handleHorseQueryInput={this.handleHorseQueryInput}/>}/>
             <Route exact path="*" />
           </Routes>
           {/* {this.props.auth0.isAuthenticated ? <h1>Welcome Back!</h1> : <LandingPage/> } */}

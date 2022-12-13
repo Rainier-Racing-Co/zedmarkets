@@ -9,54 +9,6 @@ import {Route, Routes} from 'react-router-dom';
 import axios from 'axios';
 import HorseLookup from './HorseLookup.js';
 
-const GRAPHQL_API = 'https://zed-ql.zed.run/graphql';
-const GET_HORSE_DATA_QUERY = `
-query($input: HorseInput) {
-	horse(input: $input) {
-		name
-		nft_id
-		img_url
-		gen
-		bloodline
-		breed_type
-		color
-		inserted_at
-		last_breeding_reset
-		breeding_counter
-		horse_type
-		race_statistic {
-			first_place_finishes
-			second_place_finishes
-			third_place_finishes
-			number_of_races
-			win_rate
-		}
-    offsprings {
-			bloodline
-			breed_type
-			color
-			gen
-			horse_type
-			nft_id
-			race_statistic {
-				first_place_finishes
-				second_place_finishes
-				third_place_finishes
-				number_of_races
-				win_rate
-				positions_per_distance{
-					distance
-					positions{
-						frequency
-						position
-					}
-				}
-			}
-	  }
-  }
-}
-`;
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -74,31 +26,21 @@ class App extends React.Component {
     console.log('queriedHorse State: ', this.state.queriedHorse);
   };
 
+  getHorse = async() => {
+    try {
+      console.log(this.state.queriedHorse);
+      let horseURL = `${process.env.REACT_APP_SERVER_URL}/horse?horse=${this.state.queriedHorse}`;
+      let horseData = await axios.get(horseURL);
+      console.log('horseData', horseData.data);
+      this.setState({queriedHorseData: horseData.data});
+    } catch(err) {
+      console.log(err.message);
+    }
+  };
   handleHorseQuerySubmit = async (e) => {
     e.preventDefault();
     await this.getHorse(this.state.queriedHorse);
     console.log(this.state.horses);
-  };
-
-  getHorse = async (horseId) => {
-    try{
-      const queryResult = await axios.post(
-        GRAPHQL_API, {
-          query: GET_HORSE_DATA_QUERY,
-          headers: {"Content-Type":"application/json"},
-          variables: {
-            "input": {
-              "horse_id": horseId
-            }
-          }
-        });
-      const horseResult = queryResult.data.data.horse;
-      console.log('horseResult', horseResult);
-      this.setState({queriedHorseData: horseResult});
-      console.log('horses state: ', this.state.queriedHorseData);
-    } catch(err) {
-      console.log('Error: ', err.message);
-    }
   };
 
   render () {

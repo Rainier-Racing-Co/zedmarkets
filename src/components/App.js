@@ -16,7 +16,7 @@ class App extends React.Component {
       horses: [],
       queriedHorseData: [],
       queriedHorse: null,
-      marketQueryStartDate: 1600000000,
+      marketQueryStartDate: (Date.now()/1000) - (15 * 60),
       marketQueryEndDate: Date.now()/1000, //units for api call required to be in seconds
       marketDataCache: []
     };
